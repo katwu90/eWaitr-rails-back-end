@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :users, only: %i[index show]
   resources :menus, except: %i[new edit]
   resources :menu_items, except: %i[new edit]
+  resources :customers, except: %i[new edit]
 end
