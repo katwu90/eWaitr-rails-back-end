@@ -48,6 +48,6 @@ class CustomersController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def customer_params
-      params.require(:customer).permit(:allergies, :seat, :notes, :user_id)
+      params.require(:customer).permit(:name, :allergies, :seat, :notes, :user_id)
     end
 end

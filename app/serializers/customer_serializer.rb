@@ -1,4 +1,4 @@
 class CustomerSerializer < ActiveModel::Serializer
-  attributes :id, :allergies, :seat, :notes
+  attributes :id, :name, :allergies, :seat, :notes
   has_one :user
 end
