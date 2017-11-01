@@ -17,10 +17,10 @@ class MenusController < OpenReadController
 
   # POST /menus
   def create
-    @example = current_user.menus.build(menu_params)
+    @menu = current_user.menus.build(menu_params)
 
     if @menu.save
-      render json: @menu, status: :created, location: @menu
+      render json: @menu, status: :created
     else
       render json: @menu.errors, status: :unprocessable_entity
     end
