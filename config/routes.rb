@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :orders
   resources :examples, except: %i[new edit]
   post '/sign-up' => 'users#signup'
   post '/sign-in' => 'users#signin'
@@ -11,4 +10,5 @@ Rails.application.routes.draw do
   resources :menus, except: %i[new edit]
   resources :menu_items, except: %i[new edit]
   resources :customers, except: %i[new edit]
+  resources :orders, except: %i[new edit]
 end
