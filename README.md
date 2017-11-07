@@ -43,7 +43,7 @@ A registered restaurant can view all menus.
 A registered restaurant can view all items in their menus.
 
 ## Entity Relationship Diagram
-![ERD](./ERD.jpg)
+![ERD](./ERD.jpg){:height="50%" width="50%"}
 
 ## API Routes
 
