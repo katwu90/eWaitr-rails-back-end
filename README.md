@@ -43,7 +43,7 @@ A registered restaurant can view all menus.
 A registered restaurant can view all items in their menus.
 
 ## Entity Relationship Diagram
-ERD (eWaitr-rails-back-end/ERD.jpg)
+(https://github.com/katwu90/eWaitr-rails-back-end/raw/development/ERD.jpg)
 
 ## API Routes
 
