@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class MenuItemsController < OpenReadController
   before_action :set_menu_item, only: %i[update destroy]
-
+  before_action :set_menu, only: %i[create]
   # GET /menu_items
   def index
     @menu_items = MenuItem.all
@@ -16,7 +18,6 @@ class MenuItemsController < OpenReadController
   # POST /menu_items
   def create
     @menu_item = current_user.menu_items.build(menu_item_params)
-
     if @menu_item.save
       render json: @menu_item, status: :created
     else
@@ -48,5 +49,10 @@ class MenuItemsController < OpenReadController
     params.require(:menu_item).permit(:name, :description, :price, :food_category, :menu_id)
   end
 
-  private :set_menu_item, :menu_item_params
+  def set_menu
+    menu_id = menu_item_params[:menu_id]
+    @menu = current_user.menus.find(menu_id)
+  end
+
+  private :set_menu_item, :menu_item_params, :set_menu
 end
