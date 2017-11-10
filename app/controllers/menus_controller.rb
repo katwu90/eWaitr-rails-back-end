@@ -1,18 +1,18 @@
 # frozen_string_literal: true
 
-class MenusController < OpenReadController
-  before_action :set_menu, only: %i[update destroy]
+class MenusController < ProtectedController
+  before_action :set_menu, only: %i[show update destroy]
 
   # GET /menus
   def index
-    @menus = Menu.all
+    @menus = current_user.menus.all
 
     render json: @menus
   end
 
   # GET /menus/1
   def show
-    render json: Menu.find(params[:id])
+    render json: @menu
   end
 
   # POST /menus
