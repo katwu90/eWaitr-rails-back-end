@@ -2,7 +2,7 @@
 
 class MenuItemsController < OpenReadController
   before_action :set_menu_item, only: %i[update destroy]
-  before_action :set_menu, only: %i[create]
+  before_action :set_menu, only: %i[create update]
   # GET /menu_items
   def index
     @menu_items = MenuItem.all
